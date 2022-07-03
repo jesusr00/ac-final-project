@@ -1,19 +1,34 @@
 main: 
-    
+    xor ax, ax
+    mov es, ax
+    mov ax,timer
+    mov [es:4*8], ax
+    mov [es:4*8+2], cs
 
-    call frame
-    mov bh, 100; fila
-    mov bl, 100; columna
-    call drawRedball
+    mov [fil], 10; fila
+    mov [col], 100; columna
+
+    ; call drawLeftArrow
+    ; call drawRedball
     ; call darkhole
+
+    
+    ciclo:
+        mov [cont], 0
+        add [fil], 10
+        call clear
+        call frame
+        call drawRedball
+        @@:
+            cmp [cont],1
+            jne @b
+            cmp [fil], 700
+            je $
+            jmp ciclo
+
 
 jmp $
 
-    video:
-        push eax
-        mov eax, 0fd000000h
-        mov edi, eax
-        pop eax
-    ret
-
-    res dw 1
+    cont dd 1
+    fil dd 1
+    col dd 1

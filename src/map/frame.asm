@@ -1,4 +1,5 @@
 frame: 
+    call video
     mov cx, 512
     mov al, 0001b
     mov ah, 0001b

@@ -1,4 +1,5 @@
 format binary as 'iso'
+
 N equ 20
 org 7c00h
     
@@ -38,7 +39,13 @@ org 8000h
   include '../map/dark_hole.asm'
   include '../map/frame.asm'
   include '../map/boll.asm'
-
+  include '../timer/timer.asm'
+  include '../video/graphic-mode.asm'
+  include '../video/clear.asm'
+  include '../map/background.asm'
+  include '../map/flecha_derecha.asm'
+  include '../map/flecha_izquierda.asm'
+  include '../map/draw.asm'
   
 
 times (N*512)-($-$$) db 0
