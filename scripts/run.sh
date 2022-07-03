@@ -1,3 +1,6 @@
 #! /bin/bash
 
-sh ./scripts/build.sh & sh ./scripts/run-qemu.sh
+
+rm ./build/boot.iso & 
+sh ./scripts/build-iso.sh &
+sh ./scripts/run-qemu.sh
