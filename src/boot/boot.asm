@@ -1,38 +1,22 @@
 format binary as 'iso'
-N equ 10
+N equ 20
 org 7c00h
     
-  mov	ah,0x02      ;usar el BIOS para cargar
-	mov	al,0x04      ;cantidad de sectores
-	mov	ch,0x00
-	mov	cl,0x02      ;a partir del segundo sector logico
-	mov	dh,0x00
-	mov	dl,0x80      ;del primer disco duro
-	mov	bx,0x800     ;y escribir el contenido en 0x800:0
-	mov	es,bx
-	mov	bx,0x0000
+  mov	ah, 0x02      ;usar el BIOS para cargar
+	mov	al, N      ;cantidad de sectores
+	mov	ch, 0x00
+	mov	cl, 0x02      ;a partir del segundo sector logico
+	mov	dh, 0x00
+	mov	dl, 0x80      ;del primer disco duro
+	mov	bx, 0x800     ;y escribir el contenido en 0x800:0
+	mov	es, bx
+	mov	bx, 0x0000
   
   @@: int	0x13
 	    jc	@b
 
 	jmp	8000h	
-    
-
-    ; mov ah,0x02
-    ; mov al,N
-    ; mov ch,0x00
-    ; mov cl,0x02
-    ; mov dh,0x00
-    ; mov dl,0x80
-    ; mov bx,0x8000
-    ; mov es,bx
-
-
-    ; mov bx,0x0000
-    ; @@: 
-    ;   int 13h
-    ;   jc @b
-     
+        
   
 times 510-($-$$) db 0
 dw 0xaa55
@@ -44,8 +28,7 @@ org 8000h
     mov bx, 105h  ; mode de video 1024x768 con 256 colores
     int 10h       ; lanza la interrupcion
 
-    mov ax, 0a000h; direccion de la memoria de video
-    mov es, ax
+    call video
 
 
 
@@ -54,6 +37,7 @@ org 8000h
   include '../main/main.asm'
   include '../map/dark_hole.asm'
   include '../map/frame.asm'
+  include '../map/boll.asm'
 
   
 
