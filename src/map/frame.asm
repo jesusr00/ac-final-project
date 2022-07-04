@@ -154,4 +154,139 @@ frame:
     mov [arrf], 568; fila
     mov [arrc], 238; columna
     call drawLeftArrow
+
+
+    mov [dhf], 337
+    mov [dhc], 337
+    call drawDarckHole
+
+    mov [dhf], 172
+    mov [dhc], 205
+    call drawDarckHole
+
+    mov [dhf], 403
+    mov [dhc], 106
+    call drawDarckHole
+
+    mov [dhf], 304
+    mov [dhc], 832
+    call drawDarckHole
+
+    mov [dhf], 502
+    mov [dhc], 634
+    call drawDarckHole
+
+    mov [dhf], 568    
+    mov [dhc], 667
+    call drawDarckHole
+
+    mov [onef], 337
+    mov [onec], 238
+    call drawNumberone
+
+    mov [onef], 139
+    mov [onec], 337
+    call drawNumberone
+
+    mov [onef], 337
+    mov [onec], 139
+    call drawNumberone
+
+    mov [onef], 502
+    mov [onec], 304
+    call drawNumberone
+
+    mov [onef], 271
+    mov [onec], 733
+    call drawNumberone
+
+    mov [thref], 271
+    mov [threc], 568
+    call drawNumberthre
+
+    mov [thref], 403
+    mov [threc], 469
+    call drawNumberthre
+
+    mov [thref], 568
+    mov [threc], 139
+    call drawNumberthre
+
+    mov [thref], 205
+    mov [threc], 106
+    call drawNumberthre
+
+    mov [fivef], 73
+    mov [fivec], 271
+    call drawNumberfive
+
+    mov [fivef], 502
+    mov [fivec], 832
+    call drawNumberfive
+
+    mov [fivef], 370
+    mov [fivec], 766
+    call drawNumberfive
+
+    mov [fivef], 436
+    mov [fivec], 337
+    call drawNumberfive
+
+    mov [tenf], 601
+    mov [tenc], 766
+    call drawNumberten
+
+    mov [tenf], 337
+    mov [tenc], 535
+    call drawNumberten
+
+    mov [tenf], 568
+    mov [tenc], 469
+    call drawNumberten
+
+    mov [tenf], 502
+    mov [tenc], 403
+    call drawNumberten
+
+    mov [tenf], 205
+    mov [tenc], 535
+    call drawNumberten
+
+    mov [fivef], 139
+    mov [fivec], 733
+    call drawNumberfive\
+
+
+    mov [sevenf], 271
+    mov [sevenc], 172
+    call drawNumberseven
+
+    mov [sevenf], 106
+    mov [sevenc], 535
+    call drawNumberseven
+
+    mov [sevenf], 207
+    mov [sevenc], 799
+    call drawNumberseven
+
+
+    mov [sevenf], 502
+    mov [sevenc], 700
+    call drawNumberseven
+
+    mov [alf], 106 
+    mov [alc], 601
+    call drawRightArrow
+
+    mov [alf], 370 
+    mov [alc], 238
+    call drawRightArrow
+
+    mov [alf], 304 
+    mov [alc], 634
+    call drawRightArrow
+
+    mov [alf], 73 
+    mov [alc], 898
+    call drawRightArrow
 ret

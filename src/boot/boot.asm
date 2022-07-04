@@ -1,6 +1,6 @@
 format binary as 'iso'
 
-N equ 20
+N equ 40
 org 7c00h
     
   mov	ah, 0x02      ;usar el BIOS para cargar
@@ -42,10 +42,10 @@ org 8000h
   include '../timer/timer.asm'
   include '../video/graphic-mode.asm'
   include '../video/clear.asm'
-  include '../map/background.asm'
-  include '../map/flecha_derecha.asm'
   include '../map/flecha_izquierda.asm'
   include '../map/draw.asm'
+  include '../map/number.asm'
+
   
 
 times (N*512)-($-$$) db 0
