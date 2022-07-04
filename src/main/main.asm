@@ -5,24 +5,34 @@ main:
     mov [es:4*8], ax
     mov [es:4*8+2], cs
  
+    mov ax,keyboard
+    mov [es:4*9], ax
+    mov [es:4*9+2], cs
 
     mov [fil], 10; fila
     mov [col], 107; columna
+    call drawRedball
 
+    jmp sgte
+    codigo:
+    sti
     ciclo:
-        mov [cont], 0
-        add [fil], 2
-        call clear
-        call frame
-        call drawRedball
-        @@:
-            cmp [cont],1
-            jne @b
-            cmp [fil], 700
-            je $
-            jmp ciclo
+            mov [cont], 0
+            add [fil], 2
+            call clear
+            call frame
+            call drawRedball
+            @@:
+                cmp [cont],1
+                jne @b
+                cmp [fil], 700
+                je $
+                jmp ciclo
 
-
+    sgte: 
+    @@:
+        jmp @b
+    
 jmp $
 
     cont dd 1
@@ -52,3 +62,10 @@ jmp $
 
     alf dd 1 
     alc dd 1
+
+    LEFT	      equ 1eh
+    DOWN	      equ 1fh
+    RIGHT	      equ 20h
+    UP	      equ 11h
+
+    SPEED	      equ 33

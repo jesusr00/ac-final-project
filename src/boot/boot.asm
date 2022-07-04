@@ -1,6 +1,6 @@
 format binary as 'iso'
 
-N equ 40
+N equ 45
 org 7c00h
     
   mov	ah, 0x02      ;usar el BIOS para cargar
@@ -45,6 +45,7 @@ org 8000h
   include '../map/flecha_izquierda.asm'
   include '../map/draw.asm'
   include '../map/number.asm'
+  include '../kayboard/keyboard.asm'
 
   
 
