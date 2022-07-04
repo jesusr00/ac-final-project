@@ -8,23 +8,23 @@ main:
     mov [fil], 10; fila
     mov [col], 100; columna
 
-    ; call drawLeftArrow
+    call drawLeftArrow
     ; call drawRedball
     ; call darkhole
 
     
-    ciclo:
-        mov [cont], 0
-        add [fil], 10
-        call clear
-        call frame
-        call drawRedball
-        @@:
-            cmp [cont],1
-            jne @b
-            cmp [fil], 700
-            je $
-            jmp ciclo
+    ; ciclo:
+    ;     mov [cont], 0
+    ;     add [fil], 2
+    ;     call clear
+    ;     call frame
+    ;     call drawRedball
+    ;     @@:
+    ;         cmp [cont],1
+    ;         jne @b
+    ;         cmp [fil], 700
+    ;         je $
+    ;         jmp ciclo
 
 
 jmp $

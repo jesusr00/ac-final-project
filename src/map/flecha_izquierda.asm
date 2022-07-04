@@ -35,7 +35,15 @@ leftArrow:
 
 drawLeftArrow:
     call video
-    mov si, leftArrow	     ; Apuntar al comienzo de la definición del objeto
+    mov si, leftArrow	
+
+    mov eax, 1024
+    mov ebx, [fil]
+    mul ebx
+    add eax, [col]
+
+	add edi, eax    
+
 	call draw
 
     ret

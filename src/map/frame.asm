@@ -52,5 +52,86 @@ frame:
         add edi, 1024
         loop @b
 
+    call video
+    mov cx, 768
+    @@:
+        mov [edi+39], al
+        mov [edi+39+33], al
+        mov [edi+39+33*2], al
+        mov [edi+39+33*3], al
+        mov [edi+39+33*4], al
+        mov [edi+39+33*5], al
+        mov [edi+39+33*6], al
+        mov [edi+39+33*7], al
+        mov [edi+39+33*8], al
+        mov [edi+39+33*9], al
+        mov [edi+39+33*10], al
+        mov [edi+39+33*11], al
+        mov [edi+39+33*12], al
+        mov [edi+39+33*13], al
+        mov [edi+39+33*14], al
+        mov [edi+39+33*15], al
+        mov [edi+39+33*16], al
+        mov [edi+39+33*17], al
+        add edi, 1024
+        loop @b
 
+        call video
+        mov cx, 768
+        @@:
+            mov [edi+39+33*18], al
+            mov [edi+39+33*19], al
+            mov [edi+39+33*20], al
+            mov [edi+39+33*21], al
+            mov [edi+39+33*22], al
+            mov [edi+39+33*23], al
+            mov [edi+39+33*24], al
+            mov [edi+39+33*25], al
+            mov [edi+39+33*26], al
+            mov [edi+39+33*27], al
+            mov [edi+39+33*28], al
+            mov [edi+39+33*29], al
+            add edi, 1024
+
+            loop @b
+
+
+    mov cx, 512
+    mov eax, 01010101h
+    call video
+    @@:
+        mov [edi+1024*39], eax
+        mov [edi+1024*72], eax
+        mov [edi+1024*105], eax
+        mov [edi+1024*138], eax
+        mov [edi+1024*171], eax
+        mov [edi+1024*204], eax
+        mov [edi+1024*237], eax
+        mov [edi+1024*270], eax
+        mov [edi+1024*303], eax
+        mov [edi+1024*336], eax
+        mov [edi+1024*369], eax
+        mov [edi+1024*402], eax
+        mov [edi+1024*435], eax
+        mov [edi+1024*468], eax
+        mov [edi+1024*501], eax
+
+        add edi, 2
+        loop @b 
+
+
+        mov cx, 512
+    mov eax, 01010101h
+    call video
+    @@:
+        mov [edi+1024*534], eax
+        mov [edi+1024*567], eax
+        mov [edi+1024*600], eax
+        mov [edi+1024*633], eax
+        mov [edi+1024*666], eax
+        mov [edi+1024*699], eax
+        mov [edi+1024*732], eax
+    
+        add edi, 2
+        loop @b 
 ret
