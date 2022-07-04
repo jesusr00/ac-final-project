@@ -38,9 +38,9 @@ drawLeftArrow:
     mov si, leftArrow	
 
     mov eax, 1024
-    mov ebx, [fil]
+    mov ebx, [arrf]
     mul ebx
-    add eax, [col]
+    add eax, [arrc]
 
 	add edi, eax    
 

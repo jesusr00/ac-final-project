@@ -134,4 +134,24 @@ frame:
     
         add edi, 2
         loop @b 
+
+    mov [arrf], 172; fila
+    mov [arrc], 172; columna
+    call drawLeftArrow
+
+    mov [arrf], 172; fila
+    mov [arrc], 469; columna
+    call drawLeftArrow
+
+    mov [arrf], 304; fila
+    mov [arrc], 271; columna
+    call drawLeftArrow
+
+    mov [arrf], 403; fila
+    mov [arrc], 667; columna
+    call drawLeftArrow
+
+    mov [arrf], 568; fila
+    mov [arrc], 238; columna
+    call drawLeftArrow
 ret

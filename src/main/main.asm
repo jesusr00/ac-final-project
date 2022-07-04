@@ -5,14 +5,12 @@ main:
     mov [es:4*8], ax
     mov [es:4*8+2], cs
 
+    ; call drawRedball
+    call darkhole
+
     mov [fil], 10; fila
     mov [col], 100; columna
 
-    call drawLeftArrow
-    ; call drawRedball
-    ; call darkhole
-
-    
     ; ciclo:
     ;     mov [cont], 0
     ;     add [fil], 2
@@ -32,3 +30,5 @@ jmp $
     cont dd 1
     fil dd 1
     col dd 1
+    arrf dd 1
+    arrc dd 1
