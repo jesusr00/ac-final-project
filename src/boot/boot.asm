@@ -31,8 +31,6 @@ org 8000h
 
     call video
 
-
-
   jmp main
 
   include '../main/main.asm'
@@ -46,6 +44,8 @@ org 8000h
   include '../map/flecha_derecha.asm'
   include '../map/flecha_izquierda.asm'
   include '../map/draw.asm'
+  include '../map/fondo.asm'
+  include '../keyboard/keyboard.asm'
   
 
 times (N*512)-($-$$) db 0

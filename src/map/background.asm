@@ -29,24 +29,29 @@ background:
 drawBackground: 
     call video
     
-    mov eax, 102420
-
-	add edi, eax
-    mov si, background	     ; Apuntar al comienzo de la definición del objeto
-	mov cx, 18		     ; ecx cuant las filas del objeto(32)
+    mov si, background
+    mov cx, 32		     
     filab: 
-    mov bx,29		     ; ebx contará las columnas del objeto(32)
+    mov bx,32		     
     siguienteb: 
-        mov al,[si]		     ; Obtener el primer byte del objeto
-	    cmp al, 00		     ; "Trampa" para simular transparencia, si el dato es cero no se dibuja ;-)
-	    je @f
-	    mov [edi],al
-	    @@: 
+        mov al,[si]		   
+	    cmp al, 00		    
+	    je dfondo
+        
+        next:
             inc edi
 	        inc si
 	        dec bx
 	        cmp bx,0
-	        jne siguienteb
-	        add edi,1024-29	     ; Tener en cuanta que se han dibujado 16 píxeles
+	        jne siguienteb  
 	        loop filab
+
+    dfondo:
+        mov[fil], 1
+        mov[col], 1
+        call drawRedball
+
+        jmp next
+
+    fin:
 ret

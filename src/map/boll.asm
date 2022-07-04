@@ -36,7 +36,7 @@ redball:
     
 drawRedball: 
     call video
-    
+        
     mov eax, 1024
     mov ebx, [fil]
     mul ebx
