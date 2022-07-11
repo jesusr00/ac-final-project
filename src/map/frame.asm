@@ -4,6 +4,7 @@ frame:
     mov al, 0001b
     mov ah, 0001b
     
+    ;pintar el marco de arriba
     @@:
         mov [edi], ax
         mov [edi+1024], ax
@@ -20,6 +21,7 @@ frame:
         add edi, 2
         loop @b 
 
+    ;pintar el marco de abajo
     @@:
         mov [edi+1024*768], ax
         mov [edi+1024*767], ax
@@ -36,6 +38,7 @@ frame:
         add edi, 2
         loop @b 
 
+    ;pinta las marcos laterales
     call video
     mov cx, 768
     @@:
@@ -52,6 +55,8 @@ frame:
         add edi, 1024
         loop @b
 
+
+    ;pintar celdas
     call video
     mov cx, 768
     @@:
@@ -76,6 +81,7 @@ frame:
         add edi, 1024
         loop @b
 
+        ;pintar celdas
         call video
         mov cx, 768
         @@:

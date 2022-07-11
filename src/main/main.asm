@@ -66,6 +66,6 @@ jmp $
     LEFT	      equ 1eh
     DOWN	      equ 1fh
     RIGHT	      equ 20h
-    UP	      equ 11h
+    UP	          equ 11h
 
     SPEED	      equ 33
